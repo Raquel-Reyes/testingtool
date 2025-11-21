@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+/* Importamos una fuente moderna de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Paleta de colores neutra y moderna */
+  --bg-app: #f8f9fa;    /* Fondo gris claro de toda la app */
+  --bg-card: #ffffff;   /* Fondo blanco de los paneles */
+  --text-main: #212529; /* Color del texto */
+  --border-color: #dee2e6; /* Color de los bordes finos */
+
+  /* Color de acento (un azul profesional) */
+  --accent-color: #0d6efd;
+  --accent-hover: #0b5ed7;
+
+  /* Colores de estado */
+  --success: #198754; /* Verde */
+  --error: #dc3545;   /* Rojo */
+
+  /* Espaciado y Bordes */
+  --radius-md: 8px; /* Bordes redondeados */
+  --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075); /* Sombra suave */
+}
+
+/* Reseteo básico */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Usamos la fuente importada */
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+/* === Clases que usan tus componentes === */
+
+/* Inputs y Selects bonitos */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control:focus {
+  border-color: var(--accent-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+}
+/* Botón azul principal */
+.btn-primary {
+  color: #fff;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-primary:hover { background-color: var(--accent-hover); }
+
+/* Botón rojo pequeño de borrar header */
+.btn-outline-danger { color: var(--error); border-color: var(--error); background: white;}
+.btn-outline-danger:hover { color: #fff; background-color: var(--error); }
+.btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; }
+
+/* Las "Tarjetas" blancas de los paneles */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  height: 100%;
+}
