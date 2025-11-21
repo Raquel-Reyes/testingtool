@@ -1,59 +1,89 @@
-# TestingTool
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.18.
+# API Testing Tool — Proyecto final
 
-## Development server
+Esta aplicación es una herramienta web desarrollada en Angular que replica las funcionalidades básicas de soluciones como Postman o ReqBin. Permite realizar pruebas a APIs REST directamente desde el navegador, sin necesidad de un backend, utilizando únicamente HttpClient.
 
-To start a local development server, run:
+---
 
-```bash
+## Características
+
+* Aplicación SPA (Single Page Application).
+* Permite enviar peticiones HTTP: GET, POST, PUT, DELETE y PATCH.
+* Campo para ingresar la URL del endpoint.
+* Selector de método HTTP.
+* Sección de headers totalmente configurable.
+* Sección de body en formato JSON (solo para métodos que lo requieren).
+* Visualización detallada de la respuesta:
+
+  * Código de estado.
+  * Tiempo de respuesta.
+  * Formato de respuesta JSON legible.
+* Diseño moderno, minimalista y responsivo.
+
+---
+
+## Tecnologías utilizadas
+
+* Angular 19+
+* TypeScript
+* RxJS
+* HTML5 y CSS3
+* Módulo HttpClient de Angular
+
+---
+
+## Estructura del proyecto
+
+```
+src/
+ ├── app/
+ │   ├── components/
+ │   │   ├── request-form/
+ │   │   │   ├── request-form.component.html
+ │   │   │   ├── request-form.component.css
+ │   │   │   ├── request-form.component.spec.ts
+ │   │   │   ├── request-form.component.ts
+ │   │   ├── response-viewer/
+ │   │       ├── response-viewer.component.html
+ │   │       ├── response-viewer.component.css
+ │   │       ├── response-viewer.component.spec.ts
+ │   │       ├── response-viewer.component.ts
+ │   ├── services/
+ │   │   ├── api.service.spec.ts
+ │   │   ├── api.service.ts
+ │   ├── interfaces/
+ │       ├── api-request.ts
+ │       ├── api-response.ts
+ |
+
+
+```
+## Ejecución del proyecto
+
+Para ejecutar esta aplicación localmente:
+
+1. Instalar dependencias:
+
+```
+npm install
+```
+
+2. Ejecutar la aplicación en modo desarrollo:
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Abrir en el navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Autor
 
-## Building
+Proyecto desarrollado por Raquel Reyes para el curso Programación Web II.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
