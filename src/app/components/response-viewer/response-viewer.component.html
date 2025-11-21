@@ -1,9 +1,10 @@
 <div *ngIf="response" class="response-box">
-  <h3>Respuesta</h3>
+<h3>Respuesta</h3>
+  <div class="contenedor">
+    
+    <p><strong>Status:</strong> {{ response.status }}  |</p>
+    <p><strong>Tiempo:</strong> {{ response.time | number:'1.0-2' }} ms</p>
+  </div>
 
-  <p><strong>Status:</strong> {{ response.status }}</p>
-  <p><strong>Tiempo:</strong> {{ response.time | number:'1.0-2' }} ms</p>
-
-  <h4>Body:</h4>
   <pre>{{ response.body | json }}</pre>
 </div>

@@ -3,10 +3,24 @@
   padding: 15px;
   background: #f7f7f7;
   border-radius: 8px;
+  border: 1px solid black;
+
 }
 pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: small;
   background: #eee;
   padding: 10px;
   border-radius: 5px;
+
+  white-space: pre-wrap;       
+  word-wrap: break-word;      
+  overflow-wrap: break-word;
+
 }
 
+.contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

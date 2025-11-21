@@ -1,40 +1,41 @@
-<div class="container">
 
-  <h2>API Testing Tool</h2>
+  <div class="container">
 
-  <div class="cuadro">
-    <select [(ngModel)]="method" class="filtro">
-      <option>GET</option>
-      <option>POST</option>
-      <option>PUT</option>
-      <option>DELETE</option>
-      <option>PATCH</option>
-    </select>
-
-    <input type="text" placeholder="https://api.com/endpoint" [(ngModel)]="url" class="input"/>
-
-    <button class="btn-primary" (click)="sendRequest()">Enviar</button>
+    <h2>API Testing Tool</h2>
+  
+    <div class="cuadro">
+      <select [(ngModel)]="method" class="filtro">
+        <option>GET</option>
+        <option>POST</option>
+        <option>PUT</option>
+        <option>DELETE</option>
+        <option>PATCH</option>
+      </select>
+  
+      <input type="text" placeholder="https://api.com/endpoint" [(ngModel)]="url" class="input"/>
+  
+      <button class="btn-primary" (click)="sendRequest()">Enviar</button>
+    </div>
+  
+    <div clss="cuadro">
+    <div class="headers-title">Headers</div>
+  
+    <div *ngFor="let h of headers; let i = index" class="header-row">
+      <input class="input-small" placeholder="Nombre" [(ngModel)]="h.key">
+      <input class="input-small" placeholder="Valor" [(ngModel)]="h.value">
+      <button class="btn-delete" (click)="removeHeader(i)">✕</button>
+  
+    </div>
+  
+    <button class="btn-secondary" (click)="addHeader()">Agregar header</button>
+  
+    </div>
+  
+    <div *ngIf="method !== 'GET'">
+      <h3>Body JSON</h3>
+      <textarea [(ngModel)]="body"></textarea>
+    </div>
+  
+    <app-response-viewer [response]="response"></app-response-viewer>
+  
   </div>
-
-  <div clss="cuadro">
-  <div class="headers-title">Headers</div>
-
-  <div *ngFor="let h of headers; let i = index" class="header-row">
-    <input class="input-small" placeholder="Nombre" [(ngModel)]="h.key">
-    <input class="input-small" placeholder="Valor" [(ngModel)]="h.value">
-    <button class="btn-delete" (click)="removeHeader(i)">✕</button>
-
-  </div>
-
-  <button class="btn-secondary" (click)="addHeader()">Agregar header</button>
-
-  </div>
-
-  <div *ngIf="method !== 'GET'">
-    <h3>Body JSON</h3>
-    <textarea [(ngModel)]="body"></textarea>
-  </div>
-
-  <app-response-viewer [response]="response"></app-response-viewer>
-
-</div>

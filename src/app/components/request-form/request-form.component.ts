@@ -33,11 +33,22 @@ export class RequestFormComponent {
     this.headers.push({ key: '', value: '' });
   }
   sendRequest() {
+    // 1. Lógica de seguridad:
+    // Si el método es GET o HEAD, forzamos el body a undefined,
+    // sin importar qué texto haya escrito el usuario en la caja.
+    let bodyToSend;
+    
+    if (this.method === 'GET' || this.method === 'HEAD') {
+      bodyToSend = undefined;
+    } else {
+      bodyToSend = this.body || undefined;
+    }
+
     const requestData: ApiRequest = {
       url: this.url,
       method: this.method,
       headers: this.headers,
-      body: this.body || undefined
+      body: bodyToSend // Usamos la variable ya limpia
     };
 
     this.apiService.sendRequest(requestData)
